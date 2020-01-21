@@ -28,21 +28,28 @@ class ViewController: UIViewController {
         let messages = ["You Are Awesome!",
                         "You Are Great!",
                         "You Are Slithery!",
+                        "You Are Cool But This Message Is So Long My Code Needs To Change",
                         "You Are Amazing!"]
        
-        messageText.text = messages[messageCount]
-        messageCount += 1
-        if messageCount == messages.count {
-                messageCount = 0
-        }
+//        messageText.text = messages[messageCount]
+//        messageCount += 1
+//        if messageCount == messages.count {
+//                messageCount = 0
+        let messageChosen = Int.random(in: 0...messages.count-1)
+        messageText.text = messages[messageChosen]
         
-        // let imageName = "Image" + String(imageNumber)
-        let imageName = "Image\(imageNumber)"
-        imageView.image = UIImage(named: imageName)
-        imageNumber = imageNumber + 1
-        if imageNumber == 10 {
-            imageNumber = 0
-        }
+        let imageChosen = Int.random(in: 0...9)
+        imageView.image = UIImage(named: "Image\(imageChosen)")
+        
+    }
+        
+//        // let imageName = "Image" + String(imageNumber)
+//        let imageName = "Image\(imageNumber)"
+//        imageView.image = UIImage(named: imageName)
+//        imageNumber = imageNumber + 1
+//        if imageNumber == 10 {
+//            imageNumber = 0
+//        }
         
 
         
@@ -66,5 +73,4 @@ class ViewController: UIViewController {
             //        }
     }
     
-}
 
