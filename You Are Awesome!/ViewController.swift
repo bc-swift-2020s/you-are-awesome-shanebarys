@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var messageText: UILabel!
     
@@ -19,21 +19,27 @@ class ViewController: UIViewController {
         print("view loaded 🤯")
         messageText.text = ""
     }
-
+    
     @IBAction func messageButton(_ sender: UIButton) {
-        messageText.text = "You Are Awesome!"
-        messageText.textColor = .blue
-        messageText.textAlignment = .left
-        imageView.image = UIImage(named: "Image0")
-        print("messageButton pressed😀")
+
+        let awesomeMessage = "You Are Awesome!"
+        let greatMessage = "You Are Great!"
+        let bombMessage = "You Are Da Bomb!"
+        
+        if messageText.text == awesomeMessage {
+            messageText.text = greatMessage
+            messageText.textColor = .red
+            imageView.image = UIImage(named: "Image1")
+        } else if messageText.text == greatMessage {
+            messageText.text = bombMessage
+            messageText.textColor = .blue
+            imageView.image = UIImage(named: "Image2")
+        } else {
+            messageText.text = awesomeMessage
+            messageText.textColor = .cyan
+            imageView.image = UIImage(named: "Image0")
+        }
     }
     
-    @IBAction func secondMessage(_ sender: UIButton) {
-        messageText.text = "You Are Great!"
-        messageText.textColor = .systemRed
-        messageText.textAlignment = .right
-        print("secondMessage pressed🥶")
-        imageView.image = UIImage(named: "Image1")
-    }
 }
 
