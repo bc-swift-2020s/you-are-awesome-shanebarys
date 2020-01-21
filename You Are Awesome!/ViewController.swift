@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var messageText: UILabel!
     
+    var imageNumber = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,24 +23,34 @@ class ViewController: UIViewController {
     }
     
     @IBAction func messageButton(_ sender: UIButton) {
-
-        let awesomeMessage = "You Are Awesome!"
-        let greatMessage = "You Are Great!"
-        let bombMessage = "You Are Da Bomb!"
         
-        if messageText.text == awesomeMessage {
-            messageText.text = greatMessage
-            messageText.textColor = .red
-            imageView.image = UIImage(named: "Image1")
-        } else if messageText.text == greatMessage {
-            messageText.text = bombMessage
-            messageText.textColor = .blue
-            imageView.image = UIImage(named: "Image2")
-        } else {
-            messageText.text = awesomeMessage
-            messageText.textColor = .cyan
-            imageView.image = UIImage(named: "Image0")
+        print(imageNumber)
+        // let imageName = "Image" + String(imageNumber)
+        let imageName = "Image\(imageNumber)"
+        imageView.image = UIImage(named: imageName)
+        imageNumber = imageNumber + 1
+        if imageNumber == 10 {
+            imageNumber = 0
         }
+        
+    
+            //        let awesomeMessage = "You Are Awesome!"
+            //        let greatMessage = "You Are Great!"
+            //        let bombMessage = "You Are Da Bomb!"
+            //
+            //        if messageText.text == awesomeMessage {
+            //            messageText.text = greatMessage
+            //            messageText.textColor = .red
+            //            imageView.image = UIImage(named: "Image1")
+            //        } else if messageText.text == greatMessage {
+            //            messageText.text = bombMessage
+            //            messageText.textColor = .blue
+            //            imageView.image = UIImage(named: "Image2")
+            //        } else {
+            //            messageText.text = awesomeMessage
+            //            messageText.textColor = .cyan
+            //            imageView.image = UIImage(named: "Image0")
+            //        }
     }
     
 }
