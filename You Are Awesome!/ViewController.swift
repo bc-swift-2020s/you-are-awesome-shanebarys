@@ -21,12 +21,16 @@ class ViewController: UIViewController {
 
     @IBAction func messageButton(_ sender: UIButton) {
         messageText.text = "You Are Awesome!"
+        messageText.textColor = .blue
+        messageText.textAlignment = .left
         imageView.image = UIImage(named: "Image0")
         print("messageButton pressed😀")
     }
     
     @IBAction func secondMessage(_ sender: UIButton) {
-        messageText.text = "Wowzers!"
+        messageText.text = "You Are Great!"
+        messageText.textColor = .systemRed
+        messageText.textAlignment = .right
         print("secondMessage pressed🥶")
         imageView.image = UIImage(named: "Image1")
     }
